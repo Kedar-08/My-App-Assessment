@@ -1,105 +1,71 @@
 @use "@carbon/layout" as layout;
 @use "@carbon/colors" as colors;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-}
-
-body {
+  font-family: "IBM Plex Sans", "IBM Plex", sans-serif;
   color: colors.$gray-100;
   background: colors.$white-0;
-  font-family: "IBM Plex Sans", "IBM Plex", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-* {
+*,
+a {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-
-a {
   color: inherit;
   text-decoration: none;
 }
 
-.search-bar {
-  max-width: layout.rem(400px);
-  margin-bottom: layout.$spacing-07;
-  margin-left: layout.$spacing-05;
-  margin-right: 0;
-  margin-top: 0;
-}
-
+.search-bar-wrapper,
 .page-heading {
-  margin-bottom: layout.$spacing-07;
-  margin-left: layout.$spacing-05;
+  margin-left: layout.$spacing-07;
 }
-
-.product-tile {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-  padding: layout.$spacing-05;
-  box-sizing: border-box;
+.search-bar-wrapper {
+  max-width: layout.$spacing-13 * 4;
+  width: 100%;
 }
 
 .product-image-wrapper {
   width: 100%;
   height: layout.rem(180px);
   position: relative;
-  margin-bottom: layout.$spacing-05;
 }
-
 .product-image {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  background: #fff;
+  background: colors.$white-0;
   display: block;
 }
-
 .product-title {
   margin-top: layout.$spacing-05;
   font-size: layout.rem(16px);
+  
 }
-
 .product-price {
   font-weight: bold;
   margin: layout.$spacing-03 0;
 }
-
-.product-actions {
-  margin-top: layout.$spacing-05;
-}
-
 .product-description {
   margin: layout.$spacing-03 0;
   color: colors.$gray-70;
 }
-
 .no-products-message {
   text-align: center;
   margin-top: layout.$spacing-13;
-  margin-left: auto; 
-  margin-right: auto; 
-  font-size: layout.$spacing-07; 
+  margin-left: auto;
+  margin-right: auto;
+  font-size: layout.$spacing-07;
   color: colors.$gray-70;
   white-space: nowrap;
-  width: fit-content; 
+  width: fit-content;
   display: block;
 }
-
-.product-grid {
-  row-gap: layout.$spacing-07;
-  column-gap: layout.$spacing-04;
+.center-vertical {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
