@@ -6,7 +6,15 @@ import { setProducts } from "@/redux/productSlice";
 import ProductCard from "@/components/productCard";
 import { useRouter } from "next/navigation";
 import type { Product } from "@/types/product";
-import { Grid, Column, Stack, Search, Heading, Loading, FlexGrid } from "@carbon/react";
+import {
+  Grid,
+  Column,
+  Stack,
+  Search,
+  Heading,
+  Loading,
+  FlexGrid,
+} from "@carbon/react";
 
 export default function HomePage() {
   const [localItems, setLocalItems] = useState<Product[]>([]);
@@ -54,19 +62,17 @@ export default function HomePage() {
             }
             size="md"
           />
-          <Grid fullWidth>
-            {filtered.length > 0 ? (
-              filtered.map((product) => (
+          {filtered.length > 0 ? (
+            <Grid fullWidth className="product-grid">
+              {filtered.map((product) => (
                 <Column key={product.id} lg={4} md={4} sm={2}>
                   <ProductCard product={product} />
                 </Column>
-              ))
-            ) : (
-              <Column lg={16} md={8} sm={4}>
-                <p className="no-products-message">No products found.</p>
-              </Column>
-            )}
-          </Grid>
+              ))}
+            </Grid>
+          ) : (
+            <p className="no-products-message">No products found.</p>
+          )}
         </Stack>
       </Column>
     </FlexGrid>

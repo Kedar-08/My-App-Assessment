@@ -22,7 +22,7 @@ function ProductCard({ product }: ProductCardProps) {
           priority
         />
       </AspectRatio>
-      <h6>{product.title}</h6>
+      <h6 className="product-title">{product.title}</h6>
       <p>${product.price.toFixed(2)}</p>
       <Tag type="blue">{product.category}</Tag>
       <div>

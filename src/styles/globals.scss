@@ -27,7 +27,6 @@ a {
   max-width: layout.$spacing-13 * 4;
   width: 100%;
 }
-
 .product-image-wrapper {
   width: 100%;
   height: layout.rem(180px);
@@ -43,7 +42,9 @@ a {
 .product-title {
   margin-top: layout.$spacing-05;
   font-size: layout.rem(16px);
-  
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .product-price {
   font-weight: bold;
@@ -68,4 +69,7 @@ a {
   min-height: 100vh;
   display: flex;
   align-items: center;
+}
+.product-grid {
+  gap: layout.$spacing-07;
 }
